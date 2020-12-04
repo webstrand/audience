@@ -1,4 +1,4 @@
-import { Audience, Spectator } from "./index";
+import type { Audience, Spectator } from "./index";
 
 export const AudienceConstructor: {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
