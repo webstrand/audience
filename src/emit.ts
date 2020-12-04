@@ -1,41 +1,52 @@
 import type { Audience, Spectator } from "./index";
 
 /**
- * Emit a message to all of the spectators in a given audience. Spectators that
- * are {@link emit.Options#dormant|dormant} will be ignored and spectators that
- * are {@link emit.Options#once|once} will be removed from the audience after
- * receiving the message.
+ * Emit a message to all of the [[Spectator|Spectators]] in the selected
+ * [[Audience]].
  *
- * @param audience - Audience to emit the message to.
- * @param args - Contents of the message.
+ * Optional properties on the Spectator objects control emit behavior:
+ *
+ * - `once` – The spectator will be removed immediately after receiving the
+ *   message.
+ * - `dormant` – The spectator will not receive the message, nor will `once` be
+ *   applied if it is set.
+ *
+ * These optional properties do not need to be set. But [[Audience|Audiences]]
+ * with conflicting spectator types will be incompatible with `emit`. See
+ * [[emit.Options]]
+ *
+ * @param audience - The selected audience to send the message to. Must be an
+ * [[Audience.Iterable]].
+ * @param msg - Contents of the message to be emitted.
  */
-export function emit<As extends readonly unknown[]>(audience: Audience.Iterable<Spectator<(...args: As) => unknown> & emit.Options>, ...args: As): void {
+export function emit<Msg extends readonly unknown[]>(audience: Audience.Iterable<Spectator<(...msg: Msg) => unknown> & emit.Options>, ...msg: Msg): void {
 	for(const s of audience) {
 		if(s.dormant === true) continue;
-		s.fn(...args);
+		s.fn(...msg);
 		if(s.once) audience.part(s);
 	}
 }
 
 export declare namespace emit {
 	/**
-	 * A mixin for the {@link Spectator | Spectator interface} with options that
-	 * control how emit works.
+	 * A mixin for the [[Spectator]] interface that adds optional properties on
+	 * every spectator which control how `emit` behaves when it emits messages
+	 * to them.
 	 */
 	interface Options {
 		/**
-		 * When true, the spectator will part from the audience after receiving
-		 * one message.
+		 * The spectator will be removed immediately after receiving the
+		 * message.
 		 */
 		once?: boolean;
 
 		/**
-		 * When true, even though the spectator is joined to the audience, it
-		 * will not receive any messages.
+		 * The spectator will not receive the message, nor will `once` be
+		 * applied if it is set.
 		 */
 		dormant?: boolean;
 	}
 
 	function bind(thisArg: unknown): typeof emit;
-	function bind<As extends readonly unknown[], Bs extends readonly unknown[]>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...args: [...As, ...Bs]) => unknown> & emit.Options>, ...args: As): (...args: Bs) => void;
+	function bind<Msg extends readonly unknown[], Rem extends readonly unknown[]>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...msg: [...Msg, ...Rem]) => unknown> & emit.Options>, ...msg: Msg): (...msg: Rem) => void;
 }
