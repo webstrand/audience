@@ -108,7 +108,7 @@ export declare namespace emit {
 	}
 
 	function bind(thisArg: unknown): typeof emit;
-	function bind<As extends readonly unknown[], Bs extends readonly unknown[]>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...args: [...As, ...Bs]) => unknown>>, ...args: As): (...args: Bs) => void;
+	function bind<As extends readonly unknown[], Bs extends readonly unknown[]>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...args: [...As, ...Bs]) => unknown> & emit.Options>, ...args: As): (...args: Bs) => void;
 }
 
 export function poll<As extends readonly unknown[], Ret, Spec extends Spectator<(...args: never) => unknown> & poll.Options>(audience: Audience.Iterable<Spectator<(...args: As) => Ret> & Spec>, ...args: As): Map<Spec, Ret> {

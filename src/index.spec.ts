@@ -181,6 +181,13 @@ emit.bind(null, a1, 1);
 // Property '[Symbol.iterator]' is missing
 emit.bind(null, a2, 1);
 // -------------------------------------------------------------------------- //
+// emit.bind must not be callable when spectators have a type that's
+// incompatible with `emit.Options`.
+// @ts-expect-error:
+// Types of property 'once' are incompatible.
+// Type '"foo" | undefined' is not assignable to type 'boolean | undefined'.
+emit.bind(null, a5, 1);
+// -------------------------------------------------------------------------- //
 // emit.Options must be optional
 Exact<emit.Options, Partial<emit.Options>>(true);
 /* ///////////////////////////////////////////////////////////////////////// */}
@@ -252,6 +259,13 @@ poll.bind(null, a1, 1);
 // @ts-expect-error:
 // Property '[Symbol.iterator]' is missing
 poll.bind(null, a2, 1);
+// -------------------------------------------------------------------------- //
+// poll.bind must not be callable when spectators have a type that's
+// incompatible with `poll.Options`.
+// @ts-expect-error:
+// Types of property 'once' are incompatible.
+// Type '"foo" | undefined' is not assignable to type 'boolean | undefined'.
+poll.bind(null, a5, 1);
 // -------------------------------------------------------------------------- //
 // poll.Options must be optional
 Exact<poll.Options, Partial<poll.Options>>(true);
