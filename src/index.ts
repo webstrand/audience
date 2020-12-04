@@ -64,7 +64,8 @@ export declare namespace Audience {
 	export interface Iterable<Spec extends Spectator<(...args: never) => unknown>> extends Audience<Spec> {
 		/**
 		 * Expose an iterator to allow iterating the spectators. Must return an
-		 * iterator that is immutable to changes during iteration.
+		 * iterator that handles concurrent mutation without skipping spectators
+		 * or returning parted spectators.
 		 */
 		[Symbol.iterator](): IterableIterator<Readonly<Spec>>;
 	}
