@@ -1,0 +1,8 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# All of our text files use only LF line terminators
+* eol=lf
+*.json text
+*.ts text
+*.yaml text

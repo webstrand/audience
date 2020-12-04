@@ -1,0 +1,12 @@
+{
+	"bail": true,
+	"full-trace": true,
+	"require": [
+		"ts-node/register",
+		"source-map-support/register"
+	],
+	"spec": "src/**/*.spec.ts",
+	"watch-files": [
+		"src/**/*.ts"
+	]
+}

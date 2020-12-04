@@ -1,0 +1,38 @@
+{
+	"author": "webstrand",
+	"description": "A simple event system based on audiences of spectators.",
+	"devDependencies": {
+		"@istanbuljs/nyc-config-typescript": "^1.0.1",
+		"@types/chai": "^4.2.14",
+		"@types/mocha": "^8.0.4",
+		"@types/sinon": "^9.0.9",
+		"@types/sinon-chai": "^3.2.5",
+		"@typescript-eslint/eslint-plugin": "^4.7.0",
+		"@typescript-eslint/parser": "^4.7.0",
+		"chai": "^4.2.0",
+		"eslint": "^7.14.0",
+		"mocha": "^8.2.1",
+		"nyc": "^15.1.0",
+		"sinon": "^9.2.1",
+		"sinon-chai": "^3.5.0",
+		"source-map-support": "^0.5.19",
+		"ts-node": "^9.0.0",
+		"typescript": "^4.1.2"
+	},
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/es6/index.js",
+	"name": "audience",
+	"scripts": {
+		"build": "tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.esm.json",
+		"coverage": "nyc mocha",
+		"coverage:watch": "nyc mocha --watch",
+		"lint": "eslint .",
+		"test": "mocha",
+		"test:watch": "mocha --watch",
+		"watch": "tsc -w"
+	},
+	"sideEffects": false,
+	"typings": "dist/index.d.ts",
+	"version": "1.0.0"
+}

@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"module": "ES2015",
+		"noEmit": false,
+		"outDir": "./dist/esm"
+	},
+	"exclude": [
+		"src/**/*.spec.ts"
+	],
+	"extends": "./tsconfig.json"
+}

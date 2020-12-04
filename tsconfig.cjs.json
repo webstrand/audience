@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"module": "CommonJS",
+		"noEmit": false,
+		"outDir": "./dist"
+	},
+	"exclude": [
+		"src/**/*.spec.ts"
+	],
+	"extends": "./tsconfig.json"
+}
