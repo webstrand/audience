@@ -2,11 +2,11 @@
 import { expect } from "chai";
 import "mocha";
 
-import { AudienceConstructor } from "./constructor";
+import { AudienceSet } from "./constructor";
 import type { Audience, Spectator } from "./index";
 
-describe("AudienceConstructor", () => {
-	const audience = new AudienceConstructor() as Audience.Iterable<Spectator<() => void>> & { members: Set<Spectator<() => void>> };
+describe("AudienceSet", () => {
+	const audience = new AudienceSet() as Audience.Iterable<Spectator<() => void>> & { members: Set<Spectator<() => void>> };
 	beforeEach(() => audience.dissolve());
 
 	it(`should remove all spectators when dissolved`, () => {

@@ -1,10 +1,6 @@
 import type { Audience, Spectator } from "./index";
 
-export const AudienceConstructor: {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	prototype: Audience.Iterable<any>;
-	new <Spec extends Spectator<(...args: never) => unknown>>(): Audience.Iterable<Spec>;
-} = class Audience<Spec extends Spectator<(...args: never) => unknown>> implements Audience.Iterable<Spec> {
+export class AudienceSet<Spec extends Spectator<(...args: never) => unknown>> implements Audience.Iterable<Spec> {
 	members: Set<Readonly<Spec>> = new Set(); // TODO: use #members, when supported
 
 	join<S>(spectator: S & Spec): typeof spectator {
@@ -30,4 +26,4 @@ export const AudienceConstructor: {
 	[Symbol.iterator](): IterableIterator<Readonly<Spec>> {
 		return this.members.values();
 	}
-};
+}

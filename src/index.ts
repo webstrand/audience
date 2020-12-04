@@ -1,8 +1,15 @@
 export { emit } from "./emit";
 export { poll } from "./poll";
+import { AudienceSet } from "./constructor";
 
-import { AudienceConstructor } from "./constructor";
-export const Audience = AudienceConstructor;
+/**
+ * Audience.Iterable constructor.
+ */
+export const Audience: {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	prototype: Audience.Iterable<any>;
+	new <Spec extends Spectator<(...args: never) => unknown>>(): Audience.Iterable<Spec>;
+} = AudienceSet;
 
 /**
  * Spectators recieve and respond to messages transmitted via audiences.
