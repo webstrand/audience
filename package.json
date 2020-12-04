@@ -23,6 +23,7 @@
 	"main": "dist/index.js",
 	"module": "dist/es6/index.js",
 	"name": "audience",
+	"private": true,
 	"scripts": {
 		"build": "tsc -p ./tsconfig.cjs.json && tsc -p ./tsconfig.esm.json",
 		"coverage": "nyc mocha",
