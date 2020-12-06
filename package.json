@@ -1,7 +1,7 @@
 {
 	"author": "webstrand <webstrand@gmail.com>",
 	"bugs": "https://github.com/webstrand/audience/issues",
-	"description": "A simple, composable, type-safe, and extensible event system for TypeScript.",
+	"description": "A library which provides a minimal, type-safe, and composable event system",
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
 		"@types/chai": "^4.2.14",
