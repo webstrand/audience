@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Exact, Assignable } from "./spec";
-import type { Audience, Spectator } from "./index";
+import type { Audience, Spectator } from "../src/index";
 
 /* eslint-disable @typescript-eslint/indent */
 /* ///////////////// */namespace CheckAudienceAssignability {// @ts-expect-error

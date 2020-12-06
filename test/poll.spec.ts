@@ -6,8 +6,8 @@ import * as sinonChai from "sinon-chai";
 import * as sinon from "sinon";
 chai.use(sinonChai);
 
-import { Audience, Spectator } from "./index";
-import { poll } from "./poll";
+import { Audience, Spectator } from "../src/index";
+import { poll } from "../src/poll";
 import { Exact } from "./spec";
 
 /* eslint-disable @typescript-eslint/indent */

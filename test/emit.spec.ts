@@ -6,8 +6,8 @@ import * as sinonChai from "sinon-chai";
 import * as sinon from "sinon";
 chai.use(sinonChai);
 
-import { emit } from "./emit";
-import { Audience, Spectator } from "./index";
+import { emit } from "../src/emit";
+import { Audience, Spectator } from "../src/index";
 import { Exact } from "./spec";
 
 /* eslint-disable @typescript-eslint/indent */

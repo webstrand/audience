@@ -2,8 +2,8 @@
 import { expect } from "chai";
 import "mocha";
 
-import { AudienceSet } from "./constructor";
-import type { Audience, Spectator } from "./index";
+import { AudienceSet } from "../src/constructor";
+import type { Audience, Spectator } from "../src/index";
 
 describe("AudienceSet", () => {
 	const audience = new AudienceSet() as Audience.Iterable<Spectator<() => void>> & { members: Set<Spectator<() => void>> };

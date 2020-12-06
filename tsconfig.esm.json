@@ -5,7 +5,7 @@
 		"outDir": "./dist/esm"
 	},
 	"exclude": [
-		"src/**/*.spec.ts"
+		"test/**/*"
 	],
 	"extends": "./tsconfig.json"
 }
