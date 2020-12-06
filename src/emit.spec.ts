@@ -140,4 +140,10 @@ describe("emit", () => {
 
 		expect(c.fn).calledOnceWithExactly(50, "bar");
 	});
+
+	it(`should call spectator.fn with correct context`, () => {
+		const a = audience.join({ fn: sinon.spy() });
+		emit(audience, 1, "foo");
+		expect(a.fn).calledOn(a);
+	});
 });
