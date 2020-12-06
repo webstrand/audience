@@ -29,7 +29,7 @@
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/es6/index.js",
-	"name": "audience",
+	"name": "@webstrand/audience",
 	"private": true,
 	"repository": {
 		"type": "git",
