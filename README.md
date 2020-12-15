@@ -1,7 +1,8 @@
 # Audience
-Audience is a library which tries to implement a bare-minimum, yet flexible, event system. Unlike `EventEmitter` and `EventTarget`, which users are meant to extend through sub-classes, `Audience`s are composed into objects and classes as individual properties. This composition makes it easy to guarantee that both events and their listeners are type-safe, and their simplicity makes this library's behavior easy to follow.
 
-Unlike most other event systems we consider the job of collecting and managing a set of listeners, and the job of actually sending messages to those listeners to be separate concerns. Thus the library is separated into two logical parts:
+Audience is a library which provides tools for adding type-safe events to objects. Unlike `EventEmitter` and `EventTarget` which are meant to be extended through sub-classes and manage multiple events, each `Audience` manages the audience for only one event-type. Every event that an object emits is exposed through a public property on that object referencing an `Audience`. By using composition, rather than inheritance, TypeScript is able to guarantee that sub-classes of the object cannot accidentally break type-safety and send malformed data to an event's spectators.
+
+Unique to this library, the duties of managing an audience for some event and actually emitting messages to that audience are separate concerns. Thus this library is separated into two logical parts:
 
 - `Audience`: An object which is responsible for managing a collection of listeners via `.join`/`.part`.
 - `emit`/`poll`: Independent functions which perform the actual job of emitting messages to all of the listeners.
