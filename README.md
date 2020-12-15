@@ -53,8 +53,9 @@ class FancyMouse extends TwoButtonMouse {
 interface ThreeButtonMouse extends Mouse {
 	onPress: Audience<Spectator<(device: this, button: 1 | 2 | 3) => void>>;
 }
-const ThreeButtonMouse: new () => ThreeButtonMouse = class ThreeButtonMouse
-	implements Mouse {
+const ThreeButtonMouse: {
+	new () => ThreeButtonMouse
+} = class ThreeButtonMouse implements Mouse {
 	onPress = new Audience<
 		Spectator<(device: this, button: 1 | 2 | 3) => void>
 	>();
@@ -78,6 +79,7 @@ class MagicMouse extends ThreeButtonMouse {
 		>
 	>();
 }
+
 // Note that users with a MagicMouse object _can_ emit spurious events on
 // .onPress and .onScroll:
 const magic = new MagicMouse();
