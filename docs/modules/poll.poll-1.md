@@ -39,7 +39,7 @@ Name | Type |
 
 **Returns:** *function*
 
-Defined in: [poll.ts:54](https://github.com/webstrand/audience/blob/25e4ffb/src/poll.ts#L54)
+Defined in: [poll.ts:54](https://github.com/webstrand/audience/blob/e2540cb/src/poll.ts#L54)
 
 ▸ **bind**(`thisArg`: *unknown*): *typeof* [*poll*](poll.md#poll)
 
@@ -51,4 +51,4 @@ Name | Type |
 
 **Returns:** *typeof* [*poll*](poll.md#poll)
 
-Defined in: [poll.ts:55](https://github.com/webstrand/audience/blob/25e4ffb/src/poll.ts#L55)
+Defined in: [poll.ts:55](https://github.com/webstrand/audience/blob/e2540cb/src/poll.ts#L55)

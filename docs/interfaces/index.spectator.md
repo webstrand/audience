@@ -28,4 +28,4 @@ Name | Type | Description |
 
 Function callback that receives and responds to messages.
 
-Defined in: [index.ts:31](https://github.com/webstrand/audience/blob/25e4ffb/src/index.ts#L31)
+Defined in: [index.ts:31](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L31)

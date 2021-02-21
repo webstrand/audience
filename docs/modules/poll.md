@@ -51,4 +51,4 @@ Name | Type | Description |
 
 **Returns:** *Map*<Spec, Ret\>
 
-Defined in: [poll.ts:24](https://github.com/webstrand/audience/blob/25e4ffb/src/poll.ts#L24)
+Defined in: [poll.ts:24](https://github.com/webstrand/audience/blob/e2540cb/src/poll.ts#L24)

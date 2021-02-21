@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** *typeof* [*emit*](emit.md#emit)
 
-Defined in: [emit.ts:50](https://github.com/webstrand/audience/blob/25e4ffb/src/emit.ts#L50)
+Defined in: [emit.ts:50](https://github.com/webstrand/audience/blob/e2540cb/src/emit.ts#L50)
 
 ▸ **bind**<Msg, Rem\>(`thisArg`: *unknown*, `audience`: [*Iterable*](../interfaces/index.audience.iterable.md)<[*Spectator*](../interfaces/index.spectator.md)<(...`msg`: [...Msg, ...Rem]) => *unknown*\> & [*Options*](../interfaces/emit.emit-1.options.md)\>, ...`msg`: Msg): (...`msg`: Rem) => *void*
 
@@ -49,4 +49,4 @@ Name | Type |
 
 **Returns:** *function*
 
-Defined in: [emit.ts:51](https://github.com/webstrand/audience/blob/25e4ffb/src/emit.ts#L51)
+Defined in: [emit.ts:51](https://github.com/webstrand/audience/blob/e2540cb/src/emit.ts#L51)

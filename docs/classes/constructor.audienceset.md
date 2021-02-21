@@ -57,7 +57,7 @@ Name | Type |
 
 • **members**: *Set*<Readonly<Spec\>\>
 
-Defined in: [constructor.ts:10](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L10)
+Defined in: [constructor.ts:10](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L10)
 
 ## Methods
 
@@ -79,7 +79,7 @@ mutations:
 
 Implementation of: [Iterable](../interfaces/index.audience.iterable.md)
 
-Defined in: [constructor.ts:32](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L32)
+Defined in: [constructor.ts:32](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L32)
 
 ___
 
@@ -94,7 +94,7 @@ Audience to its initial state.
 
 Implementation of: [Iterable](../interfaces/index.audience.iterable.md)
 
-Defined in: [constructor.ts:28](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L28)
+Defined in: [constructor.ts:28](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L28)
 
 ___
 
@@ -116,7 +116,7 @@ Name | Type |
 
 **Returns:** S & Spec
 
-Defined in: [constructor.ts:12](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L12)
+Defined in: [constructor.ts:12](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L12)
 
 ___
 
@@ -138,7 +138,7 @@ Name | Type |
 
 **Returns:** spectator is S
 
-Defined in: [constructor.ts:23](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L23)
+Defined in: [constructor.ts:23](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L23)
 
 ___
 
@@ -160,4 +160,4 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [constructor.ts:17](https://github.com/webstrand/audience/blob/25e4ffb/src/constructor.ts#L17)
+Defined in: [constructor.ts:17](https://github.com/webstrand/audience/blob/e2540cb/src/constructor.ts#L17)

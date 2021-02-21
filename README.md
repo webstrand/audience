@@ -12,17 +12,17 @@ Unique to this library, the duties of managing an audience for some event and ac
 // A generic mouse, with an arbitrary number of buttons. We omit the onRelease
 // event for conciseness.
 interface Mouse {
-	// Interfaces define the events that they provide by including an Audience
-	// typed property for every event.
-	onPress: Audience<Spectator<(device: Mouse, button: number) => void>>;
-	// The property name is irrelevant, but my convention is to use onEventName.
+  // Interfaces define the events that they provide by including an Audience
+  // typed property for every event.
+  onPress: Audience<Spectator<(device: Mouse, button: number) => void>>;
+  // The property name is irrelevant, but my convention is to use onEventName.
 }
 
 // A class implementing a simple two-button mouse.
 class TwoButtonMouse implements Mouse {
-	onPress = new Audience<
-		Spectator<(device: TwoButtonMouse, button: 1 | 2) => void>
-	>();
+  onPress = new Audience<
+    Spectator<(device: TwoButtonMouse, button: 1 | 2) => void>
+  >();
 }
 
 // Because the Mouse interface defines .onPress as an Audience, not an
@@ -38,27 +38,27 @@ emit(mouse2.onPress, mouse2, 1);
 // It's less than ideal to let any user emit events through our class, and it
 // makes sub-classing more difficult:
 class FancyMouse extends TwoButtonMouse {
-	// error: Property 'onPress' in type 'FancyMouse' is not assignable to the
-	// same property in base type 'TwoButtonMouse'.
-	onPress = new Audience<
-		Spectator<(device: FancyMouse, button: 1 | 2) => void>
-	>();
-	onTilt = new Audience<
-		Spectator<(device: FancyMouse, degrees: number) => void>
-	>();
+  // error: Property 'onPress' in type 'FancyMouse' is not assignable to the
+  // same property in base type 'TwoButtonMouse'.
+  onPress = new Audience<
+    Spectator<(device: FancyMouse, button: 1 | 2) => void>
+  >();
+  onTilt = new Audience<
+    Spectator<(device: FancyMouse, degrees: number) => void>
+  >();
 }
 
 // To avoid these issues, I typically cast my constructor function to produce
 // interfaces with non-iterable Audiences:
 interface ThreeButtonMouse extends Mouse {
-	onPress: Audience<Spectator<(device: this, button: 1 | 2 | 3) => void>>;
+  onPress: Audience<Spectator<(device: this, button: 1 | 2 | 3) => void>>;
 }
 const ThreeButtonMouse: {
-	new () => ThreeButtonMouse
+  new () => ThreeButtonMouse
 } = class ThreeButtonMouse implements Mouse {
-	onPress = new Audience<
-		Spectator<(device: this, button: 1 | 2 | 3) => void>
-	>();
+  onPress = new Audience<
+    Spectator<(device: this, button: 1 | 2 | 3) => void>
+  >();
 };
 
 // Users with a ThreeButtonMouse cannot emit spurious events through .onPress:
@@ -67,17 +67,17 @@ emit(mouse3.onPress, mouse3, 1); // error
 
 // And sub-classing is no longer an issue:
 class MagicMouse extends ThreeButtonMouse {
-	onPress = new Audience<
-		Spectator<(device: MagicMouse, button: 1 | 2 | 3) => void>
-	>();
-	onScroll = new Audience<
-		Spectator<
-			(
-				device: MagicMouse,
-				scroll: {x: number; y: number},
-			) => void
-		>
-	>();
+  onPress = new Audience<
+    Spectator<(device: MagicMouse, button: 1 | 2 | 3) => void>
+  >();
+  onScroll = new Audience<
+    Spectator<
+      (
+        device: MagicMouse,
+        scroll: {x: number; y: number},
+      ) => void
+    >
+  >();
 }
 
 // Note that users with a MagicMouse object _can_ emit spurious events on
@@ -102,12 +102,12 @@ _User-defined Properties_
 
 ```ts
 const spec: Spectator<(a: number, b: number) => void> & {
-	record: [number, number][];
+  record: [number, number][];
 } = {
-	fn(a, b) {
-		this.record.push([ a, b ]);
-	},
-	record: [],
+  fn(a, b) {
+    this.record.push([ a, b ]);
+  },
+  record: [],
 };
 ```
 
@@ -134,10 +134,10 @@ Returns the _same object_ passed in via `spectator`.
 
 ```ts
 const spec = audience.join({
-	fn(a, b) {
-		this.record.push([ a, b ]);
-	},
-	record: new Array<[number, number]>(),
+  fn(a, b) {
+    this.record.push([ a, b ]);
+  },
+  record: new Array<[number, number]>(),
 });
 
 audience.join(spec); // has no effect
@@ -167,7 +167,7 @@ Returns true if the object is currently joined and false otherwise.
 ```ts
 declare spec: Spectator<(a: number, b: number) => void> | null;
 if(audience.joined(spec)) {
-	spec.fn(1, 1);
+  spec.fn(1, 1);
 }
 ```
 
@@ -191,7 +191,7 @@ Constructors implementing [`Audience`](#Audience) should return this type. Other
 
 ```ts
 declare const iterableAudience: Iterable.Audience<
-	Spectator<(a: number, b: number) => void>
+  Spectator<(a: number, b: number) => void>
 >;
 ```
 
@@ -206,7 +206,7 @@ Returns an iterator that is stable in the face of concurrent mutations:
 
 ```ts
 for(const spec of iterableAudience) {
-	spec.fn(1, 1);
+  spec.fn(1, 1);
 }
 ```
 
@@ -244,21 +244,21 @@ These optional properties do not need to be set. But [`Audiences`](#Audience) wi
 
 ```ts
 const audience = new Audience<
-	Spectator<(a: number, b: number) => void> & emit.Options
+  Spectator<(a: number, b: number) => void> & emit.Options
 >();
 
 audience.join({
-	fn(a, b) {
-		console.log("A", a, b);
-	},
+  fn(a, b) {
+    console.log("A", a, b);
+  },
 });
 
 // Will be removed after one message.
 audience.join({
-	fn() {
-		console.log("B", a, b);
-	},
-	once: true,
+  fn() {
+    console.log("B", a, b);
+  },
+  once: true,
 });
 
 emit(audience, 1, 2);
@@ -300,21 +300,21 @@ Returns a Map from [`Spectators`](#Spectator) handles to their return values.
 
 ```ts
 const audience = new Audience<
-	Spectator<(a: number, b: number) => number> & poll.Options
+  Spectator<(a: number, b: number) => number> & poll.Options
 >();
 
 const B = audience.join({
-	fn(a, b) {
-		return a * b;
-	},
+  fn(a, b) {
+    return a * b;
+  },
 });
 
 // Will be removed after one message.
 const B = audience.join({
-	fn() {
-		return a * b * 2;
-	},
-	once: true,
+  fn() {
+    return a * b * 2;
+  },
+  once: true,
 });
 
 poll(audience, 5, 6); // Map{[A, 30], [B, 60]}
