@@ -47,6 +47,8 @@ export declare namespace emit {
 		dormant?: boolean;
 	}
 
+	/** @ignore */
 	function bind(thisArg: unknown): typeof emit;
+	/** @ignore */
 	function bind<Msg extends readonly unknown[], Rem extends readonly unknown[]>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...msg: [...Msg, ...Rem]) => unknown> & emit.Options>, ...msg: Msg): (...msg: Rem) => void;
 }

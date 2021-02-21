@@ -23,7 +23,7 @@ every spectator which control how [poll](../modules/poll.poll-1.md) behaves when
 The spectator will not receive the message, nor will `once` be
 applied if it is set.
 
-Defined in: [poll.ts:51](https://github.com/webstrand/audience/blob/e2540cb/src/poll.ts#L51)
+Defined in: [poll.ts:51](https://github.com/webstrand/audience/blob/942ad64/src/poll.ts#L51)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 The spectator will be removed immediately after receiving the
 message.
 
-Defined in: [poll.ts:45](https://github.com/webstrand/audience/blob/e2540cb/src/poll.ts#L45)
+Defined in: [poll.ts:45](https://github.com/webstrand/audience/blob/942ad64/src/poll.ts#L45)

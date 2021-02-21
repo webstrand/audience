@@ -51,6 +51,8 @@ export declare namespace poll {
 		dormant?: boolean;
 	}
 
-	function bind<Msg extends readonly unknown[], Rem extends readonly unknown[], Ret, Spec extends Spectator<(...msg: never) => unknown> & poll.Options>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...msg: [...Msg, ...Rem]) => Ret> & Spec>, ...msg: Msg): (...msg: Rem) => Map<Spec, Ret>;
+	/** @ignore */
 	function bind(thisArg: unknown): typeof poll;
+	/** @ignore */
+	function bind<Msg extends readonly unknown[], Rem extends readonly unknown[], Ret, Spec extends Spectator<(...msg: never) => unknown> & poll.Options>(thisArg: unknown, audience: Audience.Iterable<Spectator<(...msg: [...Msg, ...Rem]) => Ret> & Spec>, ...msg: Msg): (...msg: Rem) => Map<Spec, Ret>;
 }

@@ -30,7 +30,7 @@ Audience to its initial state.
 
 **Returns:** *void*
 
-Defined in: [index.ts:81](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L81)
+Defined in: [index.ts:81](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L81)
 
 ___
 
@@ -57,7 +57,7 @@ Name | Type | Description |
 
 The spectator object that was passed in.
 
-Defined in: [index.ts:53](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L53)
+Defined in: [index.ts:53](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L53)
 
 ▸ `Private`**join**(`spectator`: Spec): *unknown*
 
@@ -69,7 +69,7 @@ Name | Type |
 
 **Returns:** *unknown*
 
-Defined in: [index.ts:55](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L55)
+Defined in: [index.ts:55](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L55)
 
 ___
 
@@ -97,7 +97,7 @@ Name | Type | Description |
 
 true if the object is currently joined and false otherwise.
 
-Defined in: [index.ts:75](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L75)
+Defined in: [index.ts:75](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L75)
 
 ___
 
@@ -122,4 +122,4 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [index.ts:63](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L63)
+Defined in: [index.ts:63](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L63)

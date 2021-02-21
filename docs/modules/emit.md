@@ -47,4 +47,4 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: [emit.ts:22](https://github.com/webstrand/audience/blob/e2540cb/src/emit.ts#L22)
+Defined in: [emit.ts:22](https://github.com/webstrand/audience/blob/942ad64/src/emit.ts#L22)

@@ -24,7 +24,7 @@ to them.
 The spectator will not receive the message, nor will `once` be
 applied if it is set.
 
-Defined in: [emit.ts:47](https://github.com/webstrand/audience/blob/e2540cb/src/emit.ts#L47)
+Defined in: [emit.ts:47](https://github.com/webstrand/audience/blob/942ad64/src/emit.ts#L47)
 
 ___
 
@@ -35,4 +35,4 @@ ___
 The spectator will be removed immediately after receiving the
 message.
 
-Defined in: [emit.ts:41](https://github.com/webstrand/audience/blob/e2540cb/src/emit.ts#L41)
+Defined in: [emit.ts:41](https://github.com/webstrand/audience/blob/942ad64/src/emit.ts#L41)

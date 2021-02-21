@@ -48,4 +48,4 @@ Name | Type |
 :------ | :------ |
 `prototype` | [*Iterable*](../interfaces/index.audience.iterable.md)<any\> |
 
-Defined in: [index.ts:8](https://github.com/webstrand/audience/blob/e2540cb/src/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/webstrand/audience/blob/942ad64/src/index.ts#L8)
